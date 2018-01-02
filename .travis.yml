@@ -12,6 +12,14 @@ before_install:
 - ls --color ~/virtualenv
 - ls --color ~/virtualenv/python2.7
 - ls --color ~/virtualenv/python2.7/bin
+
+- which pyenv
+- pyenv --help
+- pyenv versions
+- pushd ~
+- pyenv versions
+- popd
+
 - which python
 - python --version
 
