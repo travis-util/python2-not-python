@@ -16,8 +16,9 @@ before_install:
 - which pyenv
 - pyenv --help
 - pyenv versions
+- pyenv version
 - pushd ~
-- pyenv versions
+- pyenv version
 - popd
 
 - which python
