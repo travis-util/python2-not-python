@@ -21,12 +21,12 @@ before_install:
 - pip --help
 - pip --version
 - pip install --upgrade pip # Upgrading pip
+- pip --version
 
 - which virtualenv
 - virtualenv --version
 - pip install --upgrade virtualenv # Upgrading virtualenv
 - virtualenv --version
-- pip --version
 
 install:
 - pip install --user --verbose --verbose --verbose pygments
