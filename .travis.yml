@@ -12,17 +12,19 @@ before_install:
 - ls --color ~/virtualenv
 - ls --color ~/virtualenv/python2.7
 - ls --color ~/virtualenv/python2.7/bin
+- which python
 - python --version
+
 - which pip
 - which pip2
 - which pip2.7
-- env
-- printenv TERM
-- man pip
-- virtualenv --version
+- pip --help
 - pip --version
-- pip install --upgrade virtualenv # Upgrading virtualenv
 - pip install --upgrade pip # Upgrading pip
+
+- which virtualenv
+- virtualenv --version
+- pip install --upgrade virtualenv # Upgrading virtualenv
 - virtualenv --version
 - pip --version
 
