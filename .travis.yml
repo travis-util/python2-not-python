@@ -21,8 +21,8 @@ before_install:
 - man pip
 - virtualenv --version
 - pip --version
-- pip install -U virtualenv # Upgrading virtualenv
-- pip install -U pip # Upgrading pip
+- pip install --upgrade virtualenv # Upgrading virtualenv
+- pip install --upgrade pip # Upgrading pip
 - virtualenv --version
 - pip --version
 
