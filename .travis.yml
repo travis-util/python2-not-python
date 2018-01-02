@@ -1,0 +1,37 @@
+# Travis
+---
+# language: not python
+addons:
+  apt:
+    packages:
+    # - elinks # Needs pygmentize -f html -O full
+
+before_install:
+- ls --color -a
+- ls --color -a ~
+- ls --color ~/virtualenv
+- ls --color ~/virtualenv/python2.7
+- ls --color ~/virtualenv/python2.7/bin
+- python --version
+- which pip
+- which pip2
+- which pip2.7
+- env
+- printenv TERM
+- man pip
+- virtualenv --version
+- pip --version
+- pip install -U virtualenv # Upgrading virtualenv
+- pip install -U pip # Upgrading pip
+- virtualenv --version
+- pip --version
+
+install:
+- pip install --user --verbose --verbose --verbose pygments
+# --user is required for language: <not> python to use python 2 (python 3 seems unsupported)
+
+before_script:
+- which pygmentize
+
+script:
+- true
