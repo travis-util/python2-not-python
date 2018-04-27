@@ -1,12 +1,18 @@
 # Travis
 ---
 # language: not python
-addons:
-  apt:
-    packages:
-    # - elinks # Needs pygmentize -f html -O full
 
 before_install:
+- pip install --user --upgrade pip # Upgrading pip
+
+install:
+- pip install --user --verbose --verbose --verbose pygments
+# --user is required for language: <not> python to use python 2 (python 3 seems unsupported)
+
+script:
+- command -v pygmentize
+
+after_script:
 - ls --color -a
 - ls --color -a ~
 - ls --color ~/virtualenv
@@ -30,20 +36,13 @@ before_install:
 - command -v pip2.7
 - pip --help
 - pip --version
-- pip install --user --upgrade pip # Upgrading pip
-- pip --version
 
 - command -v virtualenv
 - virtualenv --version
 - pip install --user --upgrade virtualenv # Upgrading virtualenv
 - virtualenv --version
 
-install:
-- pip install --user --verbose --verbose --verbose pygments
-# --user is required for language: <not> python to use python 2 (python 3 seems unsupported)
-
-before_script:
-- command -v pygmentize
-
-script: true
-after_script: true
+# addons:
+  # apt:
+    # packages:
+    # - elinks # Needs pygmentize -f html -O full
