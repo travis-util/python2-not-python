@@ -47,7 +47,7 @@ script:
 - true
 
 after_script:
-- pip install --upgrade pip # Upgrading pip
+- pip install --user --upgrade pip # Upgrading pip
 - pip --version
-- pip install --upgrade virtualenv # Upgrading virtualenv
+- pip install --user --upgrade virtualenv # Upgrading virtualenv
 - virtualenv --version
