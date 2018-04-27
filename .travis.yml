@@ -4,6 +4,8 @@
 
 before_install:
 - pip install --user --upgrade pip # Upgrading pip
+- virtualenv --version
+- pip install --user --upgrade virtualenv # Upgrading virtualenv
 
 install:
 - pip install --user --verbose --verbose --verbose pygments
@@ -38,8 +40,6 @@ after_script:
 - pip --version
 
 - command -v virtualenv
-- virtualenv --version
-- pip install --user --upgrade virtualenv # Upgrading virtualenv
 - virtualenv --version
 
 # addons:
