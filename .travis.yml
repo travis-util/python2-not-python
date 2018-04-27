@@ -30,11 +30,11 @@ before_install:
 - command -v pip2.7
 - pip --help
 - pip --version
+#
 
 - command -v virtualenv
 - virtualenv --version
-- pip install --upgrade virtualenv # Upgrading virtualenv
-- virtualenv --version
+#
 
 install:
 - pip install --user --verbose --verbose --verbose pygments
@@ -49,3 +49,5 @@ script:
 after_script:
 - pip install --upgrade pip # Upgrading pip
 - pip --version
+- pip install --upgrade virtualenv # Upgrading virtualenv
+- virtualenv --version
