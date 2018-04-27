@@ -13,7 +13,7 @@ before_install:
 - ls --color ~/virtualenv/python2.7
 - ls --color ~/virtualenv/python2.7/bin
 
-- which pyenv
+- command -v pyenv
 - pyenv --help
 - pyenv versions
 - pyenv version
@@ -21,18 +21,16 @@ before_install:
 - pyenv version
 - popd
 
-- which python
+- command -v python
 - python --version
 
-- which pip
-- which pip2
-- which pip2.7
+- command -v pip
+- command -v pip2
+- command -v pip2.7
 - pip --help
 - pip --version
-- pip install --upgrade pip # Upgrading pip
-- pip --version
 
-- which virtualenv
+- command -v virtualenv
 - virtualenv --version
 - pip install --upgrade virtualenv # Upgrading virtualenv
 - virtualenv --version
@@ -42,7 +40,11 @@ install:
 # --user is required for language: <not> python to use python 2 (python 3 seems unsupported)
 
 before_script:
-- which pygmentize
+- command -v pygmentize
 
 script:
 - true
+
+after_script:
+- pip install --upgrade pip # Upgrading pip
+- pip --version
