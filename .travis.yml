@@ -15,6 +15,7 @@ before_install:
 
 - command -v pyenv
 - pyenv --help
+- pyenv help install
 - pyenv versions
 - pyenv version
 - pushd ~
